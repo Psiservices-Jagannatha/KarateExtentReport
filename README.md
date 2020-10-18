@@ -4,7 +4,7 @@
 
 Add the dependency to your pom.xml file:
 
-          '''       
+
         <dependencies>
         <dependency>
             <groupId>com.intuit.karate</groupId>
@@ -30,7 +30,7 @@ Add the dependency to your pom.xml file:
             <scope>test</scope>
         </dependency>
     </dependencies>
-'''
+
 
 
 ## Create a ExtentManager Class :
@@ -79,9 +79,10 @@ public class ExtentManager {
 }
 
 # Create ExtentReport Hook
-public class ExtentReportHook implements ExecutionHook {
-    private static ExtentTest test;
-    String Status, Error, Tags;
+
+          public class ExtentReportHook implements ExecutionHook {
+          private static ExtentTest test;
+          String Status, Error, Tags;
 
     @Override
     public boolean beforeScenario(Scenario scenario, ScenarioContext context) {

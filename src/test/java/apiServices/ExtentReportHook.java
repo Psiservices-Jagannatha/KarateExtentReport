@@ -42,13 +42,15 @@ public class ExtentReportHook implements ExecutionHook {
         test = ExtentManager.getInstance().createTest("<b>Scenario: </b>" + result.getScenario().getName());
         test.info("<b>Url: </b>" + context.getRequestBuilder().getUrlAndPath());
         test.info("<b>Feature: </b>" + result.getScenario().getFeature().getName());
-        test.assignCategory(Tags);
+        test.info("<b>Tag: </b>" + Tags);
         test.info("<b>Method: </b>" + context.getPrevRequest().getMethod());
         test.info("<b>Status: </b>" + Status);
-
         if (Status == "Failed") {
             test.fail("<b>Error: </b>" + Error);
         }
+        String response = new String(context.getPrevResponse().getBody());
+        test.info("<b>Response:</b>" + response);
+
 
     }
 

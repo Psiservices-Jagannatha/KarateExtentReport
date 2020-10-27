@@ -48,7 +48,7 @@ public class ExtentManager {
         System.out.println("Initialize Extent report was called");
         if(ExtentManager.getInstance() == null){
             Date date = new Date();
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd_MM_yy");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy-HH-mm-ss");
             String formattedDate = dateFormat.format(date);
             ExtentManager.createInstance("results/" + "Extent_Report_Demo_" + formattedDate + ".html");
         }
